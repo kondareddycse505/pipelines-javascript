@@ -1,4 +1,13 @@
 trigger:
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Free Trial(219ea81c-0449-4d7b-a47e-9f5bc2cff2d4)'
+    appType: 'webAppLinux'
+    appName: 'my-sample-java-project'
+    deployToSlotOrASE: true
+    resourceGroupName: 'myapp-rg'
+    slotName: 'production'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
 - '*' ## denotes any branch
 
 pool:
